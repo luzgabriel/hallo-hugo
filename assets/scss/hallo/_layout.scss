@@ -9,21 +9,33 @@ main {
     .column.left {
         text-align: end;
     }
+    img.portrait {
+        height: 40vh;
+    }
 
     .column.right {
         h1 {
             margin-left: -10px; /* Correction for margin of leftmost character. */
-            margin-bottom: 0.4em;
+            margin-top: 0.2em;
+            margin: 0;
+            font-size: 20vmin;
         }
 
         h2 {
             margin-left: -4px; /* Correction for margin of leftmost character. */
-            margin-top: 0;
+            margin-top: 0em;
+            margin: 0;
+            font-size: 6vmin;
+        }
+
+        p {
+            font-size: 4vmin;
+            margin: 0;
         }
         
         .links {
-            margin-top: 2.5rem;
-            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 5vmin;
 
             a {
                 margin-right: 0.5rem;
@@ -32,15 +44,16 @@ main {
         }
     }
 
-    @media screen and (max-width: $break-large) {
+    @media screen and (orientation:portrait) {
         flex-direction: column;
-        margin-top: 0;
+        margin-top: 5vh;
 
         .column.left {
             text-align: center;
         }
 
-        .column.right h1 {
+        .column.right {
+            text-align: center;
             margin-top: 0;
         }
 
@@ -51,11 +64,23 @@ main {
 }
 
 footer {
-    display: flex;
-    margin-top: 3rem;
-    font-size: 0.75rem;
+}
 
-    @media screen and (max-width: $break-large) {
-        flex-direction: column;
-    }
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover; 
+    right: 0;
+    bottom:0;
 }
